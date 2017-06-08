@@ -1,0 +1,24 @@
+<div class="col-sm-8 blog-main">
+
+<% @articles.each do |article| %>
+  <div class="blog-post">
+    <h2 class="blog-post-title"><%= article.title.capitalize %></h2>
+    <img src="800x250" class="img-responsive" alt="Responsive image">
+    <p class="blog-post-meta"><% article.publish_date %> by <a href="#"><%= Faker::Name.name %></a></p>
+    <% body = article.body || 'No Content Available' %>
+    <p><%= truncate(body, length: 250)%></p>
+    <hr>
+  </div>
+<% end %>
+
+  <nav>
+    <ul class="pagination">
+  <li><a href="#">1</a></li>
+  <li><a href="#">2</a></li>
+  <li><a href="#">3</a></li>
+  <li><a href="#">4</a></li>
+  <li><a href="#">5</a></li>
+</ul>
+  </nav>
+
+</div>

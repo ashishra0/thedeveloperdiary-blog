@@ -1,5 +1,5 @@
 class SiteController < ApplicationController
   def index
-    @articles = Article.all
+    @articles = current_user.nil? ? Article.all : current_user.articles
   end
 end

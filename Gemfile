@@ -14,6 +14,8 @@ gem 'turbolinks'
 gem 'jbuilder', '~> 2.0'
 gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'bootstrap-sass', '~> 3.3.6'
+gem 'will_paginate', '~> 3.1.0'
+gem "bootstrap-will_paginate"
 
 group :development, :test do
   gem 'sqlite3'
@@ -21,9 +23,12 @@ group :development, :test do
   gem 'pry'
 end
 
-group :development do
-  gem 'web-console', '~> 2.0'
+group :production do
   gem 'pg'
   gem 'rails_12factor'
+end
+
+group :development do
+  gem 'web-console', '~> 2.0'
   gem 'spring'
 end

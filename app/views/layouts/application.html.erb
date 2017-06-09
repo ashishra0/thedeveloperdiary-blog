@@ -32,7 +32,7 @@
 </nav>
   <div class="container">
     <% if user_signed_in? %>
-      Welcome! <%= current_user.email %> || <%= link_to "Account Setting", edit_user_registration_path %> || <%= link_to "logout", destroy_user_session_path, method: :delete %>
+      Welcome! <%= current_user.name %> || <%= link_to "Account Settings", edit_user_registration_path %> || <%= link_to "Logout", destroy_user_session_path, method: :delete %>
     <% end %>
 
     <div class="blog-header">

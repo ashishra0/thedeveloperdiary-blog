@@ -3,7 +3,7 @@
     <h2 class="blog-post-title"><%= @article.title.capitalize %></h2>
     <img src="<%= @article.image_url %>" alt="article image" class="img-responsive">
     <!--<img src="800x250" class="img-responsive" alt="Responsive image">-->
-    <p class="blog-post-meta"><% @article.publish_date %> by <%= @article.user.name %> on <%= @article.category.name %></p>
+    <p class="blog-post-meta"><%= @article.publish_date.to_s %> by <%= @article.user.name %> on <%= @article.category.name %></p>
     <p><%= raw @article.body %></p>
     <hr>
   </div>

@@ -20,7 +20,12 @@
       <li class="active"><a href="/"><span class="glyphicon glyphicon-home"> Home</a></li>
         <li class="active"><a href="/"><span class="glyphicon glyphicon-phone-alt"> Contact</a></li>
     </ul>
-    <% unless user_signed_in? %>
+    <% if user_signed_in? %>
+      <ul class="nav navbar-nav navbar-right">
+        <li><%= link_to "Settings", edit_user_registration_path %></li>
+        <li><%= link_to "Logout", destroy_user_session_path, method: :delete %></li>
+      </ul>
+    <% else %>
       <ul class="nav navbar-nav navbar-right">
         <li><a href="/users/sign_up"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
         <li><a href="/users/sign_in"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
@@ -32,7 +37,7 @@
 </nav>
   <div class="container">
     <% if user_signed_in? %>
-      Welcome! <%= current_user.name %> || <%= link_to "Account Settings", edit_user_registration_path %> || <%= link_to "Logout", destroy_user_session_path, method: :delete %>
+      <p class="pull-right">Welcome! <%= current_user.name %></p>
     <% end %>
 
     <div class="blog-header">
